@@ -1,0 +1,36 @@
+<h1 mat-dialog-title>Sign Up</h1>
+<div mat-dialog-content>
+  <form [formGroup]="signup">
+    <mat-form-field appearance="outline">
+      <mat-label>UserName</mat-label>
+      <input matInput formControlName="username" placeholder="username" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>First Name</mat-label>
+      <input matInput formControlName="firstname" placeholder="firstname" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Last Name</mat-label>
+      <input matInput formControlName="lastname" placeholder="lastname" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" placeholder="email" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input
+        matInput
+        placeholder="Password"
+        [type]="hide ? 'password' : 'text'"
+        formControlName="password"
+        required
+      />
+      <mat-icon matSuffix (click)="hide = !hide">{{
+        hide ? "visibility_off" : "visibility"
+      }}</mat-icon>
+      <!-- <input matInput placeholder="Password" required /> -->
+    </mat-form-field>
+    <button mat-raised-button color="primary">SignUp</button>
+  </form>
+</div>
